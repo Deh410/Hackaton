@@ -4,32 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/cardview_light_background"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:gravity="center"
-            android:text="via SBC"
-            android:textSize="24dp"
+            android:layout_height="250dp"
+            android:background="@color/colorGreen"></RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <TextView
+                android:layout_marginTop="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal"
+                android:text="NOME GARAGEM ^"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
+                />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:text="VIA"
+            android:textSize="24sp"
             android:textStyle="bold" />
+        <TextView
+            android:id="@+id/moreopt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textSize="24sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"/>
+
 
         <android.support.v7.widget.CardView
-            android:layout_width="360dp"
-            android:layout_height="140dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="80dp"
-            app:cardCornerRadius="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="96dp"
+            app:cardCornerRadius="4dp"
             app:cardElevation="8dp">
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/idOnibus"
@@ -38,93 +68,162 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
                     android:text="Ônibus 3"
-                    android:textSize="18dp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/idOnibus"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_centerVertical="true"
                     android:text="7,3horas/dia"
-                    android:textSize="28dp" />
+                    android:textSize="24dp" />
 
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="14dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_centerVertical="true"
                     android:src="@drawable/images" />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:layout_marginTop="220dp">
+            android:layout_height="match_parent"
+            android:layout_marginTop="252dp"
+            android:id="@+id/lower_part"
+            android:background="@color/colorPrimary">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:id="@+id/rl_info">
+                <TextView
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data = "
+                    android:textSize="14sp"
+                    android:id="@+id/data_text"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="17/09/2018"
+                    android:layout_toRightOf="@id/data_text"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_marginRight="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VISTORIADO"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@id/rl_info"
+                android:id="@+id/card_co2">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CO2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:textSize="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="//////////////"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="16dp"/>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="1dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@id/card_co2"
+                android:id="@+id/card_nox">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NOx"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:textSize="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="//////////////"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="16dp"/>
 
-            <TextView
-                android:id="@+id/co2"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:gravity="center"
-                android:text="CO2"
-                android:textSize="24dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/co2"
-                android:gravity="center"
-                android:text="30ppm"
-                android:textSize="24dp" />
-
-            <TextView
-                android:id="@+id/nox"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="40dp"
-                android:gravity="center"
-                android:text="NOx"
-                android:textSize="24dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_below="@id/co2"
-                android:gravity="center"
-                android:text="15ppm"
-                android:textSize="24dp" />
-
-            <Button
-                android:id="@+id/angry_btn"
-                android:layout_width="160dp"
-                android:layout_height="60dp"
-                android:layout_below="@id/co2"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="80dp"
-                android:background="@drawable/button_shape"
-                android:elevation="8dp"
-                android:gravity="center"
-                android:text="Vistoria"
-                android:textColor="#1DE9B6"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="64dp"
-                android:layout_marginTop="270dp"
-                android:text="Manutenção:                   OK"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+            </android.support.v7.widget.CardView>
         </RelativeLayout>
+        <LinearLayout
+            android:paddingTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            >
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="8dp">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Dashboard"
+                    android:textStyle="bold"/>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="8dp">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Gráficos"
+                    android:textStyle="bold"/>
+            </android.support.v7.widget.CardView>
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end|bottom"
+                android:backgroundTint="@color/colorGreen"
+                android:background="@color/colorGreen"
+                android:src="@drawable/ic_action_name"
+                />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="8dp">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Trajeto"
+                    android:textStyle="bold"/>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="8dp">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Exportar"
+                    android:textStyle="bold"/>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
